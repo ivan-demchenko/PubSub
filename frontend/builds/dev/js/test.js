@@ -1,13 +1,7 @@
 (function() {
-  var callback1, callback2, callback3, h1, h2, h3, i1, i2, i3, ps, root;
+  var callback1, callback2, callback3, h1, h2, h3, ps, root;
 
   root = typeof exports !== "undefined" && exports !== null ? exports : this;
-
-  i1 = document.getElementById('text1');
-
-  i2 = document.getElementById('text2');
-
-  i3 = document.getElementById('text3');
 
   h1 = h2 = h3 = null;
 
@@ -26,22 +20,22 @@
   });
 
   callback1 = function(data) {
-    i1.value = data;
-    return i3.value = data;
+    $('#text1').val(data);
+    $('#text3').val(data);
   };
 
   callback2 = function(data) {
-    return i1.value = data;
+    $('#text1').val(data);
   };
 
   callback3 = function(data) {
-    i1.value = data;
-    i2.value = data;
-    return i3.value = data;
+    $('#text1').val(data);
+    $('#text2').val(data);
+    $('#text3').val(data);
   };
 
   root.fireEvent = function(eventName, data) {
-    return ps.broadcast(eventName, data);
+    ps.broadcast(eventName, data);
   };
 
   root.onEvent = function(handlerID) {
