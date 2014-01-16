@@ -1,0 +1,31 @@
+doctype html
+head
+  title PubSub test
+
+body
+  p
+    |evt1
+    br
+    button(onclick="fireEvent('evt1', 'yo-yo-yo')") Inc 1
+    input#text1(type="text")
+    button(onclick="onEvent('h1')") On
+    button(onclick="offEvent('h1')") Off
+
+  p
+    | evt2
+    br
+    button(onclick="fireEvent('evt2', 'the second speacks')") Inc 2
+    input#text2(type="text")
+    button(onclick="onEvent('h2')") On
+    button(onclick="offEvent('h2')") Off
+
+  p
+    | evt3
+    br
+    button(onclick="fireEvent('evt3', 'Hola!')") Inc 3
+    input#text3(type="text")  
+    button(onclick="onEvent('h3')") On
+    button(onclick="offEvent('h3')") Off
+
+  script(src="../js/pubsub.js")
+  script(src="../js/test.js")
